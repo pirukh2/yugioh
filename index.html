@@ -1,11 +1,128 @@
-
 <html>
-  <head>
-    
-  </head>
-  
-  <body>
-    Hello! I'm Riccardo.
-  </body>
-  
+<head>
+ <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+ <body onload="init()">
+
+    <script>
+
+
+    var  allcards = new Array();
+
+
+   function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drag(ev) {
+    // this.style.backgroundImage=allcards[0];
+     //alert(ev.target.opacity=0.5);
+     ev.target.height=40;
+     ev.dataTransfer.setData("text", ev.target.id);
+  }
+e
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+    function addcard(){
+      sceltautente= "aggiungi al deck"
+      trunk -= "carta";
+      deck += "carta";
+    }
+
+    function init(){
+     var http = new XMLHttpRequest();
+     http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status==200){
+          alert(this.responseText)
+        }
+        
+     }
+
+     http.open("GET","box.html",true);
+     http.send();
+     var c = JSON.parse(sessionStorage.allcards)
+    allcards [0]= c[0];
+    document.getElementById("c1").src=c[1]
+    document.getElementById("c2").src=c[2]
+    document.getElementById("c3").src=c[0]
+    //document.getElementById("c1").hidden=true
+}
+  //statistiche
+  window.deck=["greengadget.jpg"]
+  wnidow.trunk=["carta"]
+  window.xp = 0
+  window.gold = 500
+  window.lv = 1
+  window.rank = 0
+  //carta si colora per attivare un effetto
+  //document.body.style.backgroundImage="url('yugiohsfondo.jpg')"
+  //document.getElementById("titolo").innerHTML=gold
+  //col= lunghezza max 12 totale
+  //idee chat:
+  //   1 <div contenteditable="true">
+        //buona fortuna.
+      //</div>
+      //2
+      //<input type= "text" placeholder= "ciao"> </input>
+     //<button type= "submit"> invia </button>
+     //</form>
+  //   <header>
+    //   <h1>formato duello</h1>
+      // <h2>tipi di duello</h2>
+  //  <nav>
+//<a href="#"> speed duel </a>
+//<a href="#"> duello normale </a>
+//</nav>
+//</header>
+//<h1>carte suportate</h1>
+//<h1>formato preferito</h1>
+//</article>
+//</section>
+//<section>
+//<article>
+//<h1>duello turbo</h1>
+//<p> in arrivo </p>
+//</section>
+//<footer></footer>
+//<progress value= "25" max= 100></progress>
+
+  </script>
+
+<div class="container-fluid">
+
+  <div class="row" >
+    <div class="col-2" style="background-color:blue" id ="infocarta">
+      <div class="row" style="background-color:yellow"> Immagine grande carta </div>
+      <div class="row" style="background-color:white"> Descrizione carta </div>
+      <div class="row" style="background-color:gray"><button id= "avanti"onclick="prossimecarte()"style="height:30px">  salva deck </div>
+
+    </div>
+    <div class="col-8" style="background-color:red" ondrop="drop(event)" ondragover="allowDrop(event)">
+    </div>
+
+    <div class="col-2" style="background-color:yellow" id ="infocarta">
+      <div class="row" style="background-color:blue" style="height:40px">
+        <input list= "trunk"name "trunk" style="height:40px">
+      <datalist id= "trunk">
+        <option value= "carta">
+            <option value= "carta3">
+            <option value= "carta2">
+            </datalist>
+       </div>
+      <div class="row" style="background-color:yellow" > <button id= "avanti"onclick="prossimecarte()"style="height:30px"> avanti </button> <button id= "indietro"onclick="carteprecedeti()"style="height:30px"></> indietro </button></div>
+      <div class="row" style="background-color:white" id ="trunk"ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img id="drag1" src="greengadget.jpg" draggable="true" ondragstart="drag(event)" width="90" height="90">
+        <img id="drag3" src="redgadget.jpg" draggable="true" ondragstart="drag(event)" width="90" height="90">
+        <img id="drag2" src="yellowgadget.jpg" draggable="true" ondragstart="drag(event)" width="90" height="90">
+      </div>
+    </div>
+
+</div>
+</body>
 </html>
