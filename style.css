@@ -1,1 +1,15 @@
-ccc
+body
+{
+background-color:#FFFFFF;
+
+}
+
+.container-fluid{
+background-color:#000000;
+
+}
+
+.row{
+background-color:#FFFF00;
+height: 322px;
+}
