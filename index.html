@@ -40,12 +40,12 @@
      var http = new XMLHttpRequest();
      http.onreadystatechange = function () {
         if (this.readyState == 4 && this.status==200){
-         // alert(this.responseText)
+          alert(this.responseText)
         } 
         
      }
      
-     http.open("GET","carte/nomi.html",true);
+     http.open("GET","carte/nomi.json",true);
      http.send();
 
 }
