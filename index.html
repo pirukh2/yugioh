@@ -23,7 +23,7 @@
      ev.target.height=100;
      ev.dataTransfer.setData("text", ev.target.id);
   }
-e
+
   function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
@@ -44,7 +44,7 @@ e
         
      }
      alert('ok');
-     http.open("GET","index.html",true);
+     http.open("GET","carte.html",true);
      http.send();
     /* var c = JSON.parse(sessionStorage.allcards)
     allcards [0]= c[0];
