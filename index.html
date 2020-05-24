@@ -93,8 +93,16 @@
 <div class="container-fluid">
 <div class="row" >
     <div class="col-2" style="background-color:blue" id ="infocarta">
-     <div class="row" style="background-color:yellow"> Immagine grande carta </div>
+      <div class="row" style="background-color:yellow"> Immagine grande carta </div>
       <div class="row" style="background-color:white"> Descrizione carta </div>
+      <div class="row" style="background-color:gray"><button id= "avanti"onclick="prossimecarte()"style="height:30px">  salva deck </div>
+
+    </div>
+    <div class="col-8" style="background-color:red" ondrop="drop(event)" ondragover="allowDrop(event)">
+    </div>
+
+    <div class="col-2" style="background-color:yellow" id ="infocarta">
+      <div class="row" style="background-color:blue" style="height:40px">
       <div class="row" style="background-color:gray"><button id= "avanti"onclick="prossimecarte()"style="height:30px">  salva deck </div>
         <input list= "trunk"name "trunk" style="height:40px">
       <datalist id= "trunk">
